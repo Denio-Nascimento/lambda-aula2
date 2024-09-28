@@ -1,0 +1,72 @@
+{
+  "Records": [
+    {
+      "eventID": "5",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "Keys": {
+          "orderId": {
+            "S": "100020"
+          }
+        },
+        "NewImage": {
+          "orderId": {
+            "S": "100020"
+          },
+          "errorTimestamp": {
+            "S": "2024-09-28T19:50:00.000000"
+          },
+          "bucketName": {
+            "S": "pedidos-19781209"
+          },
+          "errorReason": {
+            "S": "Dados de pagamento inválidos"
+          },
+          "fileName": {
+            "S": "pedidos/pedidos_lote_erro-05.json"
+          },
+          "orderData": {
+            "M": {
+              "orderId": {
+                "S": "100020"
+              },
+              "customerEmail": {
+                "S": "mariana.oliveira@email.com"
+              },
+              "customerName": {
+                "S": "Mariana Oliveira"
+              },
+              "orderDate": {
+                "S": "2024-09-19T12:45:00Z"
+              },
+              "status": {
+                "S": "Aguardando Pagamento"
+              },
+              "totalAmount": {
+                "S": "300.00"
+              },
+              "paymentMethod": {  // Campo adicional
+                "S": "Cartão de Crédito"
+              },
+              "shippingAddress": {  // Campo adicional complexo
+                "M": {
+                  "street": {"S": "Rua das Flores, 123"},
+                  "city": {"S": "São Paulo"},
+                  "state": {"S": "SP"},
+                  "zipCode": {"S": "01000-000"}
+                }
+              }
+            }
+          }
+        },
+        "StreamViewType": "NEW_IMAGE",
+        "SequenceNumber": "115",
+        "SizeBytes": 26
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:957562288056:table/PedidosIncorretosTable/stream/2024-09-28T14:44:37.578"
+    }
+  ]
+}
