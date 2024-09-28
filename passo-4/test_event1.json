@@ -1,0 +1,61 @@
+{
+  "Records": [
+    {
+      "eventID": "1",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "Keys": {
+          "orderId": {
+            "S": "100016"
+          }
+        },
+        "NewImage": {
+          "orderId": {
+            "S": "100016"
+          },
+          "errorTimestamp": {
+            "S": "2024-09-28T15:10:20.719410"
+          },
+          "bucketName": {
+            "S": "pedidos-19781209"
+          },
+          "errorReason": {
+            "S": "Valor inválido no campo totalAmount"
+          },
+          "fileName": {
+            "S": "pedidos/pedidos_lote_erro-01.json"
+          },
+          "orderData": {
+            "M": {
+              "orderId": {
+                "S": "100016"
+              },
+              "customerEmail": {
+                "S": "carlos.lima@email.com"
+              },
+              "customerName": {
+                "S": "Carlos Lima"
+              },
+              "orderDate": {
+                "S": "2024-09-16T09:15:00Z"
+              },
+              "status": {
+                "S": "Pendente"
+              },
+              "totalAmount": {
+                "S": "invalid"
+              }
+            }
+          }
+        },
+        "StreamViewType": "NEW_IMAGE",
+        "SequenceNumber": "111",
+        "SizeBytes": 26
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:957562288056:table/PedidosIncorretosTable/stream/2024-09-28T14:44:37.578"
+    }
+  ]
+}
