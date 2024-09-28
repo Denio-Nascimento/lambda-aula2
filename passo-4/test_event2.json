@@ -1,0 +1,40 @@
+{
+  "Records": [
+    {
+      "eventID": "2",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "Keys": {
+          "orderId": {
+            "S": "100017"
+          }
+        },
+        "NewImage": {
+          "orderId": {
+            "S": "100017"
+          },
+          "errorTimestamp": {
+            "S": "2024-09-28T16:20:30.123456"
+          },
+          "bucketName": {
+            "S": "pedidos-19781209"
+          },
+          "errorReason": {
+            "S": "Falta o campo customerEmail"
+          },
+          "fileName": {
+            "S": "pedidos/pedidos_lote_erro-02.json"
+          }
+          // 'orderData' está ausente
+        },
+        "StreamViewType": "NEW_IMAGE",
+        "SequenceNumber": "112",
+        "SizeBytes": 26
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:957562288056:table/PedidosIncorretosTable/stream/2024-09-28T14:44:37.578"
+    }
+  ]
+}
