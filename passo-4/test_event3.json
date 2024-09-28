@@ -1,0 +1,118 @@
+{
+  "Records": [
+    {
+      "eventID": "3",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "Keys": {
+          "orderId": {
+            "S": "100018"
+          }
+        },
+        "NewImage": {
+          "orderId": {
+            "S": "100018"
+          },
+          "errorTimestamp": {
+            "S": "2024-09-28T17:30:40.654321"
+          },
+          "bucketName": {
+            "S": "pedidos-19781209"
+          },
+          "errorReason": {
+            "S": "Valor negativo no campo totalAmount"
+          },
+          "fileName": {
+            "S": "pedidos/pedidos_lote_erro-03.json"
+          },
+          "orderData": {
+            "M": {
+              "orderId": {
+                "S": "100018"
+              },
+              "customerEmail": {
+                "S": "ana.souza@email.com"
+              },
+              "customerName": {
+                "S": "Ana Souza"
+              },
+              "orderDate": {
+                "S": "2024-09-17T10:25:00Z"
+              },
+              "status": {
+                "S": "Cancelado"
+              },
+              "totalAmount": {
+                "S": "-150.00"
+              }
+            }
+          }
+        },
+        "StreamViewType": "NEW_IMAGE",
+        "SequenceNumber": "113",
+        "SizeBytes": 26
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:957562288056:table/PedidosIncorretosTable/stream/2024-09-28T14:44:37.578"
+    },
+    {
+      "eventID": "4",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "Keys": {
+          "orderId": {
+            "S": "100019"
+          }
+        },
+        "NewImage": {
+          "orderId": {
+            "S": "100019"
+          },
+          "errorTimestamp": {
+            "S": "2024-09-28T18:40:50.987654"
+          },
+          "bucketName": {
+            "S": "pedidos-19781209"
+          },
+          "errorReason": {
+            "S": "Cliente não encontrado"
+          },
+          "fileName": {
+            "S": "pedidos/pedidos_lote_erro-04.json"
+          },
+          "orderData": {
+            "M": {
+              "orderId": {
+                "S": "100019"
+              },
+              "customerEmail": {
+                "S": "joao.pereira@email.com"
+              },
+              "customerName": {
+                "S": "João Pereira"
+              },
+              "orderDate": {
+                "S": "2024-09-18T11:35:00Z"
+              },
+              "status": {
+                "S": "Em Revisão"
+              },
+              "totalAmount": {
+                "S": "200.00"
+              }
+            }
+          }
+        },
+        "StreamViewType": "NEW_IMAGE",
+        "SequenceNumber": "114",
+        "SizeBytes": 26
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:957562288056:table/PedidosIncorretosTable/stream/2024-09-28T14:44:37.578"
+    }
+  ]
+}
