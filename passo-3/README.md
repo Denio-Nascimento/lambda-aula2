@@ -35,22 +35,59 @@ Este projeto contém uma função AWS Lambda que processa arquivos JSON de pedid
   - `Partition Key`: `orderId` (Tipo: String)
   - `Sort Key`: `errorTimestamp` (Tipo: String)
 
-### 2. Criação do Bucket S3
-
-- Crie um bucket S3 onde os arquivos JSON serão carregados.
-- Configure uma notificação de evento do tipo **PUT** no bucket para invocar a função Lambda quando novos arquivos forem enviados.
-
-### 3. Criação da Função Lambda
+### 2. Criação da Função Lambda
 
 - Crie uma função Lambda no console da AWS.
 - Copie o código de `lambda_function.py` para a função.
 - Conceda as permissões necessárias para que a função possa acessar o DynamoDB e o S3.
 
-### 4. Configuração de Permissões IAM
+### 3. Configuração de Permissões IAM
 
 - A função Lambda precisa de permissões para acessar:
   - `dynamodb:PutItem` para inserir dados nas tabelas DynamoDB.
   - `s3:GetObject` e `s3:ListBucket` para acessar os arquivos no bucket S3.
+
+A função Lambda precisa de permissões para acessar o S3 (para ler os arquivos) e o DynamoDB (para inserir os dados). Siga os passos abaixo para configurar a política de permissões:
+
+1. Nas opções da Lambda acesse `Configuration`, depois `Permissions` e clique no nome da Role.
+2. Clique em **Create inline Policy** e selecione **JOSON**.
+5. Crie uma nova política personalizada com as seguintes permissões:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:PutItem",
+                "dynamodb:GetItem"
+            ],
+            "Resource": [
+                "arn:aws:dynamodb:REGIAO:ID_DA_CONTA:table/PedidosTable",
+                "arn:aws:dynamodb:REGIAO:ID_DA_CONTA:table/PedidosIncorretosTable"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::NOME_DO_BUCKET",
+                "arn:aws:s3:::NOME_DO_BUCKET/*"
+            ]
+        }
+    ]
+}
+```
+
+### 4. Criação do Bucket S3
+
+- Crie um bucket S3 onde os arquivos JSON serão carregados.
+- Configure uma notificação de evento do tipo **PUT** no bucket para invocar a função Lambda quando novos arquivos forem enviados.
+
 
 ### 5. Teste do Sistema
 
