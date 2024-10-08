@@ -2,6 +2,8 @@
 
 Este projeto implementa uma função AWS Lambda que é acionada por eventos do **DynamoDB Streams** quando um novo item é inserido em uma tabela **DynamoDB**. A função gera uma URL pré-assinada para um objeto no **Amazon S3** e envia uma notificação contendo essa URL, junto com os detalhes do pedido, para um tópico **Amazon SNS**.
 
+![Arquitetura Final](../imagens/aula2-2.png)
+
 
 ## Funcionalidades Principais
 
