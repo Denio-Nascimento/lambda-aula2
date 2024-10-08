@@ -2,6 +2,10 @@
 
 Este projeto implementa um fluxo de processamento de pedidos utilizando **AWS Lambda**, **S3**, **DynamoDB**, **DynamoDB Streams** e **SNS**. Ele é dividido em duas partes principais:
 
+![Arquitetura Final](imagens/aula2-1.png)
+
+
+
 ## 1. Processamento e Validação de Pedidos
 
 A primeira função **AWS Lambda** é acionada quando arquivos JSON contendo pedidos são enviados para um bucket **S3**. A função realiza a validação dos pedidos e, conforme o resultado da validação:
