@@ -2,6 +2,9 @@
 
 Este projeto contém uma função AWS Lambda que processa arquivos JSON de pedidos carregados em um bucket S3. A função realiza validações básicas nos dados e armazena os pedidos válidos em uma tabela DynamoDB. Caso algum pedido esteja incorreto, ele é armazenado em uma segunda tabela para pedidos inválidos.
 
+
+![Arquitetura Final](imagens/aula2-1.png)
+
 ## Estrutura do Projeto
 
 - **lambda_function.py**: Arquivo principal contendo o código da função Lambda.
